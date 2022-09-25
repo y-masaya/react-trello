@@ -19,8 +19,8 @@ export const TaskCard = () => {
         setTaskList={setTaskList}
       />
       <Tasks inputText={inputText} taskList={taskList}/>
-      {console.log("TaskCard")}
-      {console.log(taskList)}
+      {/* {console.log("TaskCard")}
+      {console.log(taskList)} */}
     </div>
   );
 };
