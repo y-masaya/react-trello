@@ -15,8 +15,6 @@ export const TaskAddInput = ({
         text: inputText,
       },
     ]);
-    console.log(taskList);
-    console.log(inputText);
     // setInputText("");
   };
 
