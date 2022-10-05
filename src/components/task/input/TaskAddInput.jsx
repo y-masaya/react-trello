@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuid } from "uuid";
 
 export const TaskAddInput = ({
   inputText,
@@ -7,15 +8,22 @@ export const TaskAddInput = ({
   setTaskList,
 }) => {
   const handleSubmit = (e) => {
+    const taskId = uuid();
     e.preventDefault();
+
+    if (inputText === "") {
+      return;
+    }
     //カードを追加する。
     setTaskList([
       ...taskList,
       {
         text: inputText,
+        draggableId: `task-${taskId}`,
+        id: taskId,
       },
     ]);
-    // setInputText("");
+    setInputText("");
   };
 
   const handleChange = (e) => {
@@ -30,7 +38,7 @@ export const TaskAddInput = ({
           placeholder="add a task"
           className="taskAddInput"
           onChange={handleChange}
-          // value={inputText}
+          value={inputText}
         />
       </form>
     </div>
